@@ -4,7 +4,7 @@ export default class dashboardPage{
     }
     static InputEmployeeName(value) {
         return cy.get('.oxd-autocomplete-text-input input')
-            .type(value);  // Isi input dengan nilai yang diberikan
+            .type(value);  
             
     }
     static ResetEmployeeName()
@@ -13,12 +13,11 @@ export default class dashboardPage{
     }
     static SelectOption(value){
         cy.get('.oxd-autocomplete-dropdown')
-        .should('not.have.css', 'display', 'none').and('be.visible'); // Pastikan dropdown terlihat di halaman
+        .should('not.have.css', 'display', 'none').and('be.visible'); 
 
-        // Step 3: Cari item yang berisi teks yang sesuai dengan nilai yang diketik
-        cy.get('.oxd-autocomplete-dropdown') // Targetkan dropdown
-        .contains(value) // Cari item yang mengandung teks yang diketik
-        .click(); // Klik item tersebut
+        cy.get('.oxd-autocomplete-dropdown') 
+        .contains(value) 
+        .click(); 
     }
 
     static buttonSearch(){
@@ -31,11 +30,10 @@ export default class dashboardPage{
     static DropdownFilter(index,value){
         cy.get('.oxd-select-wrapper').eq(index).click();
         cy.get('.oxd-select-dropdown')
-        .should('not.have.css', 'display', 'none').and('be.visible'); // Pastikan dropdown terlihat di halaman
+        .should('not.have.css', 'display', 'none').and('be.visible'); 
 
-        // Step 3: Cari item yang berisi teks yang sesuai dengan nilai yang diketik
-        cy.get('.oxd-select-dropdown') // Targetkan dropdown
-        .contains(value) // Cari item yang mengandung teks yang diketik
-        .click(); // Klik item tersebut
+        cy.get('.oxd-select-dropdown') 
+        .contains(value) 
+        .click(); 
     }
 }
